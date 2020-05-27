@@ -1,0 +1,26 @@
+#head{
+      padding: 35px;
+      padding-top: 35px;
+      margin-top: 100px;
+      text-align: center;
+       margin-bottom: 25px;
+}
+#nav{
+      padding: 35px;
+}
+
+#padding{
+     padding: 35px;
+      padding-top: 35px;
+      margin-top: 100px;
+      text-align: center;
+       margin-bottom: 25px;
+}
+#homebutton{
+  transition-duration: 0.4s;
+}
+
+ #homebutton:hover{
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
