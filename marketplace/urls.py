@@ -19,9 +19,11 @@ import marketplace.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', marketplace.views.Welcome.as_view()),
+    path('', marketplace.views.Welcome.as_view(), name='home'),
     path('about/', marketplace.views.About.as_view(), name='about'),
-    path('contact/', marketplace.views.Contact.as_view()),
+    path('contact/', marketplace.views.Contact.as_view(), name='contact'),
     path('team/', marketplace.views.Team.as_view(), name='team'),
+    path('gallery/', marketplace.views.Gallery.as_view(), name='gallery'),
+    path('login/', marketplace.views.Login.as_view(), name='login')
 
 ]

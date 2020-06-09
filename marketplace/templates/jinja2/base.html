@@ -17,15 +17,16 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/962bdcfa7f.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{% static "marketplace/style.css" %}">
+    <link rel="stylesheet" href="{% static 'marketplace/style.css' %}">
 </head>
 
-<body>
+    <nav class="navbar navbar-expand-lg  navbar-light fixed-top" style="background-color: #dcdcdc;" id='nav'>
+            <div class="container" >
     <nav id = "home">
         <div class="navbar-brand">
             <a class="navbar-brand"
-               href="index.php?controller=pages&action=home">
-                <img src="" id="logo" alt="logo"/>
+               href="{% url 'home' %}">
+                <img src="{% static 'marketplace/img/logo.png' %}" id="logo" alt="logo" style="max-height: 50px; max-width: 50px"/>
 
             </a>
         </div>
@@ -36,37 +37,28 @@
         <div class="collapse navbar-collapse" style="float:right" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <!--                                <a class="nav-link" href="index.php?controller=pages&action=home">Home <span class="sr-only">(current)</span>
-                                                    </a>-->
-                    <a class="nav-link" href="home.php">Home</a>
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <!--                                <a class="nav-link" href="index.php?controller=pages&action=bmi">Gallery</a>-->
-                    <a class="nav-link" href="Gallery.php">Gallery</a>
+                    <a class="nav-link" href="{% url 'gallery' %}">Gallery</a>
                 </li>
 
                 <li class="nav-item">
-                    <!--                                <a class="nav-link" href="index.php?controller=users&action=read">About</a>-->
-                    <a class="nav-link" href="About.php">About</a>
-                </li>
+                    <a class="nav-link" href="{% url 'about' %}">About</a>
                 </li>
                 <li class="nav-item">
-                    <!--                                <a class="nav-link" href="index.php?controller=login&action=validateLogin">Login</a>-->
-                    <a class="nav-link" href="contact.php">Contact</a>
+                    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <!--                                <a class="nav-link" href="index.php?controller=users&action=register">
-                                                        Sign Up
-                                                    </a>-->
-                    <a class="nav-link" href="login.php"> Sign Up </a>
+                    <a class="nav-link" href="{% url 'login' %}"> Sign Up </a>
                 </li>
                 <li class="nav-item">
-                    <!--                                <a class="nav-link" href="index.php?controller=login&action=validateLogin">Login</a>-->
-                    <a class="nav-link" href="Login.php">Login</a>
+                    <a class="nav-link" href="{% url 'login' %}">Login</a>
 
             </ul>
         </div>
-        </div>
+    </nav>
+            </div>
     </nav>
 
 {% block content %}
@@ -101,6 +93,5 @@
         </div>
     </div>
 </footer>
-</body>
 
 

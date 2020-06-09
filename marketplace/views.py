@@ -18,3 +18,11 @@ class Team(TemplateView):
 
 class Contact(TemplateView):
     template_name = 'jinja2/contact.html'
+
+
+class Gallery(TemplateView):
+    template_name = 'jinja2/gallery.html'
+
+
+class Login(TemplateView):
+    template_name = 'jinja2/login.html'
