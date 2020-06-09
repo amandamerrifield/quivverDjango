@@ -22,4 +22,6 @@ urlpatterns = [
     path('', marketplace.views.Welcome.as_view()),
     path('about/', marketplace.views.About.as_view(), name='about'),
     path('contact/', marketplace.views.Contact.as_view()),
+    path('team/', marketplace.views.Team.as_view(), name='team'),
+
 ]

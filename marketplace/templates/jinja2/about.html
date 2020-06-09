@@ -1,4 +1,5 @@
-{% extends "base.html" %}
+{% extends "jinja2/base.html" %}
+{% load static %}
 
 {% block content %}
     <div id="head" class="wrapper">
@@ -6,7 +7,7 @@
     <h5>To collect professional quality action shots from around the world and delivers them to your devices for a
         fraction of the cost of a hired pro.</h5>
     <div class="card bg-dark text-white">
-        <img class="card-img" src="../images/DSC09136.jpg" alt="Card image" height="600px">
+        <img class="card-img" src="{% static 'marketplace/img/DSC09136.jpg' %}" alt="Card image" height="600px">
     </div>
 
 
@@ -20,7 +21,7 @@
                     came through surfing and Photography, but we found those two worlds rarely met. Out of this
                     mutual love for the water, Quivver was born.
                 </p>
-                <a href="team.php" input='button'><small class="text-muted">Meet our team.</small></a>
+                <a href="{% url 'team' %}" input='button'><small class="text-muted">Meet our team.</small></a>
         </div>
     </div>
     </div>

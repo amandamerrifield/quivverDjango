@@ -5,12 +5,16 @@ from django.views.generic import TemplateView
 
 
 class Welcome(TemplateView):
-    template_name = "home.html"
+    template_name = "jinja2/home.html"
 
 
 class About(TemplateView):
-    template_name = "about.html"
+    template_name = "jinja2/about.html"
+
+
+class Team(TemplateView):
+    template_name = 'jinja2/team.html'
 
 
 class Contact(TemplateView):
-    template_name = 'contact.html'
+    template_name = 'jinja2/contact.html'
