@@ -20,6 +20,6 @@ import marketplace.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', marketplace.views.Welcome.as_view()),
-    path('about/', marketplace.views.About.as_view()),
+    path('about/', marketplace.views.About.as_view(), name='about'),
     path('contact/', marketplace.views.Contact.as_view()),
 ]
