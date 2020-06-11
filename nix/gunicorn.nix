@@ -5,8 +5,8 @@
   user ? "quivver",
   db-name ? "quivver",
   port ? 8080,
-  processes ? 1,
-  threads ? 1,
+  processes ? 2,
+  threads ? 4,
 ...}: 
 
 with import <nixpkgs> {};
