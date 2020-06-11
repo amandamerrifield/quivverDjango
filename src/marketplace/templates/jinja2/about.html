@@ -1,0 +1,29 @@
+{% extends "jinja2/base.html" %}
+{% load static %}
+
+{% block content %}
+    <div id="head" class="wrapper">
+    <h1>Our Mission</h1>
+    <h5>To collect professional quality action shots from around the world and delivers them to your devices for a
+        fraction of the cost of a hired pro.</h5>
+    <div class="card bg-dark text-white">
+        <img class="card-img" src="{% static 'marketplace/img/DSC09136.jpg' %}" alt="Card image" height="600px">
+    </div>
+
+
+    <div class="card mb-3">
+        <div class="card-body">
+
+                <h5>Quivver is a site where photographers capture and sell images of surfers based on location and time;
+                    both doing what they love.</h5>
+                <p class="card-text">Living in San Diego, there is an innate draw to the ocean. Some people find it
+                    sitting in the sand or playing in the waves. For us we found appreciating our love for the ocean
+                    came through surfing and Photography, but we found those two worlds rarely met. Out of this
+                    mutual love for the water, Quivver was born.
+                </p>
+                <a href="{% url 'team' %}" input='button'><small class="text-muted">Meet our team.</small></a>
+        </div>
+    </div>
+    </div>
+
+{% endblock %}
