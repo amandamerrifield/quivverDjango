@@ -1,13 +1,16 @@
 {}:
+with import <nixpkgs> {};
 let
-  nixpkgs = import <nixpkgs> {};
-  python = nixpkgs.python37.withPackages (ps: with ps; [ 
-        django_2_2
-        jinja2
-        ipython
-        whitenoise
-        gunicorn
-        psycopg2
-      ]);
+  # the interpreter we're choosing to use
+  interpreter = python37;
+  # A function that takes a package set and selects a list from that set
+  choosePackages = pkgs: with pkgs; [
+      django_2_2
+      jinja2
+      ipython
+      whitenoise
+      gunicorn
+      psycopg2
+  ];
 in
-  python
+  interpreter.withPackages choosePackages

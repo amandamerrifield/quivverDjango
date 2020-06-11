@@ -15,6 +15,7 @@ let
 
   # Repository-specific configuration options
   python = import ./python.nix {};
+  key_file = "/run/${user}/django-keys";
 
   # Application-specific configuration options
   load-django-env = ''
@@ -22,7 +23,7 @@ let
   '';
   load-django-keys = ''
     # Keep important secrets out of the nix store!
-    KEYS=/run/${user}/django-keys
+    KEYS=${key_file}
     if [ -f $KEYS ]; then
       source $KEYS
     fi
@@ -35,7 +36,6 @@ let
           -b 0.0.0.0:${toString port} \
           --workers=${toString processes} \
           --threads=${toString threads}
-          $@
     '';
 in
   serve
