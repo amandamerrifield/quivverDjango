@@ -1,6 +1,9 @@
 # vim swap files
 *.swp
 
+# Static files
+src/static/*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

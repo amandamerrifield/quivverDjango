@@ -1,9 +1,7 @@
 {
+  app-name,
   settings,
-  wsgi,
-  src,
-  user ? "quivver",
-  db-name ? "quivver",
+  key-file? "",
   port ? 8080,
   processes ? 2,
   threads ? 4,
@@ -15,7 +13,8 @@ let
 
   # Repository-specific configuration options
   python = import ./python.nix {};
-  key_file = "/run/${user}/django-keys";
+  src = "${../src}";
+  key_file = "/run/${app-name}/django-keys";
 
   # Application-specific configuration options
   load-django-env = ''
@@ -23,15 +22,16 @@ let
   '';
   load-django-keys = ''
     # Keep important secrets out of the nix store!
-    KEYS=${key_file}
-    if [ -f $KEYS ]; then
+    KEYS=${key-file}
+    if $KEYS && [ -f $KEYS ]; then
       source $KEYS
     fi
   '';
   serve = writeShellScriptBin "serve" ''
       ${load-django-env}
-      ${load-django-keys}
-      ${python}/bin/gunicorn quivver.wsgi:application \
+      cd ${src}
+      # python ${src}/manage.py collectstatic --noinput
+      ${python}/bin/gunicorn ${app-name}.wsgi:application \
           --pythonpath ${src} \
           -b 0.0.0.0:${toString port} \
           --workers=${toString processes} \
