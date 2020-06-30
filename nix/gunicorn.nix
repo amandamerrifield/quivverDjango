@@ -30,7 +30,7 @@ let
   serve = writeShellScriptBin "serve" ''
       ${load-django-env}
       cd ${src}
-      # python ${src}/manage.py collectstatic --noinput
+      python ${src}/manage.py collectstatic --noinput
       ${python}/bin/gunicorn ${app-name}.wsgi:application \
           --pythonpath ${src} \
           -b 0.0.0.0:${toString port} \
