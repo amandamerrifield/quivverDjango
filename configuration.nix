@@ -7,8 +7,8 @@ let
   settings = "quivver.settings_nix";
   name = "quivverDjango";
   port = 8080;
-  gunicorn = import ./gunicorn.nix {inherit app-name settings port;};
-  python = import ./python.nix {};
+  gunicorn = import nix/gunicorn.nix {inherit app-name settings port;};
+  python = import nix/python.nix {};
 
 in
 {
