@@ -1,0 +1,82 @@
+#head{
+      padding: 35px;
+      padding-top: 35px;
+      margin-top: 100px;
+      text-align: center;
+       margin-bottom: 25px;
+
+}
+.homebutton{
+   background-color: #A1D6E2;
+    border: none;
+    border-radius: 12px;
+    margin: 4px 2px;
+    display: inline-block;
+    padding: 10px;
+    color: darkslategray;
+
+}
+.homebutton:hover{
+    background-color: #F1F1F2;
+    border: 2px solid #F1F1F2;
+    color: darkslategray;
+;
+}
+h1{
+    font-family: 'Khula Extra Bold 800';
+}
+h2{
+    font-family: 'Khula Extra Bold 800';
+}
+#links{
+    color: #BCBABE;
+}
+
+#links:hover{
+    color:#A1D6E2;
+}
+.banner{
+        padding: 35px;
+      padding-top: 35px;
+      margin-top: 100px;
+      text-align: center;
+       margin-bottom: 25px;
+}
+.gallery{
+    position:relative;
+}
+.sidenav {
+  height: 100%;
+  width: 160px;
+  position: relative;
+  top: 0;
+  left: 0;
+  float:left;
+  background-color: white;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #BCBABE;
+  display: block;
+  float: left;
+}
+
+.sidenav a:hover {
+  color: #A1D6E2;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
