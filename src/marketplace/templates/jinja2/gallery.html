@@ -1,14 +1,20 @@
-
 {% extends "jinja2/base.html" %}
 {% load static %}
 {% block content %}
-<div id="head" class="col-sm-12">
-<ul>
-{% for i in object_list %}
-    <img src="{{i.file.url}}"/>
-{% empty %}
-    <li>No articles yet.</li>
-{% endfor %}
-</ul>
-    </div>
+    <div class="row row-cols-1 row-cols-md-3" style="padding-top:100px;padding-left:50px; padding-right:50px;">
+    {% for i in object_list %}
+                <div class="col mb-4">
+                            <div class="card h-100">
+                    <img style="max-height: 800px; max-width: 500px;" class="card-img-top"
+                         src="{{ i.file.url }}"
+                         alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title that wraps to a new line</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+                </div>
+    {% endfor %}
+     </div>
 {% endblock %}
